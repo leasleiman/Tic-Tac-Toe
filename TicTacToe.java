@@ -1,14 +1,18 @@
+//Lea Sleiman
+//Game of TicTacToe using an array implementation 
 
 public class TicTacToe {
 	
 	private String[] TicTacToeBoard;
 	public int numCell=9;
 	
+	//Constructor
 	public TicTacToe() {
 		
 		TicTacToeBoard= new String[numCell];
 	}
 	
+	//method will check if the game has been won 
 	public boolean CheckWin() {
 		if (getCell(0).equals(getCell(1))&& getCell(0).equals(getCell(2))) return true;
 		else if (getCell(3).equals(getCell(4))&& getCell(3).equals(getCell(5))) return true;
@@ -22,10 +26,12 @@ public class TicTacToe {
 		else return false;
 	}
 	
+	//Set method
 	public void setCell(int pos, String choice) {
 		TicTacToeBoard[pos]= choice;
 	}
 	
+	//Will print the board in a nicer format than an array
 	public void printBoard() {
 		for (int outer=0;outer<numCell;outer++) {
 			if (outer<3) {
@@ -69,6 +75,7 @@ public class TicTacToe {
 		System.out.println();
 	}
 	
+	//Get method
 	public String getCell(int pos) {
 		return TicTacToeBoard[pos];
 	}
